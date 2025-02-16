@@ -49,7 +49,7 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Run SenpAI Review
-        uses: dicodingacademy/senpai@latest
+        uses: dicodingacademy/senpai-action@latest
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
