@@ -1,0 +1,39 @@
+name: "senpai-action"
+description: "Auto-reviews pull requests with Google's Gemini AI, offering insightful feedback and suggestions to enhance code quality."
+author: 'furqoncreative'
+
+inputs:
+  GITHUB_TOKEN:
+    description: 'GitHub token to interact with the repository'
+    required: true
+  GEMINI_API_KEY:
+    description: 'Google Gemini API key for accessing AI-powered code reviews'
+    required: true
+  GEMINI_MODEL:
+    description: 'The specific Gemini model used for code review and feedback'
+    required: false
+    default: 'gemini-2.0-flash'
+  EXCLUDE_FILES:
+    description: 'Comma-separated list of file patterns to exclude from the review process'
+    required: false
+    default: ''
+  TRIGGER_COMMAND:
+    description: 'Command to manually trigger a code review'
+    required: false
+    default: '/review'
+  LANGUAGE_REVIEW:
+    description: 'The language in which review comments and feedback will be provided'
+    required: false
+    default: 'english'
+  TONE_RESPONSE:
+    description: 'The tone of the feedback, such as professional, friendly, or concise'
+    required: false
+    default: 'professional'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'code'
+  color: 'red'
